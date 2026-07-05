@@ -6,10 +6,12 @@ class Solution {
 
         int[][] dist = new int[n][n];
 
+        // Initially mark all cells as unvisited
         for(int i=0;i<n;i++){
             Arrays.fill(dist[i],-1);
         }
-        
+        // Step 1:
+        // Put every thief into queue
         for(int i=0;i<n;i++){
             for(int j=0;j<n;j++){
                 if(grid.get(i).get(j)==1){
@@ -18,7 +20,9 @@ class Solution {
                 }
             }
         }
-
+        
+        // Step 2:
+        // Multi-source BFS
         while(!q.isEmpty()){
             int[] curr = q.poll();
 
@@ -40,6 +44,8 @@ class Solution {
             }
         }
 
+        // Step 3:
+        // Max Heap
         PriorityQueue<int[]> pq = new PriorityQueue<>((a,b)->b[0]-a[0]);
 
         boolean[][] vis = new boolean[n][n];
