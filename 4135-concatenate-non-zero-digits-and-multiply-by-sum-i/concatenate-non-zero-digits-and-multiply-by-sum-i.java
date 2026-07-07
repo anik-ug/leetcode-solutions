@@ -1,18 +1,18 @@
 class Solution {
     public long sumAndMultiply(int n) {
         int m = n;
-        String ans="";
+        StringBuilder sb = new StringBuilder();
         int sum = 0;
         while(m>0){
             if(m%10 != 0){
-                ans+=String.valueOf(m%10);
+                sb.append(m % 10);
                 sum+=m%10;
             }
             m/=10;
         }
-        if(ans.length() == 0)
+        if(sb.length() == 0)
             return 0;
-        String rev = new StringBuilder(ans).reverse().toString();
+        String rev = sb.reverse().toString();
         long x = Long.parseLong(rev);
         x*=sum;
         return x;
