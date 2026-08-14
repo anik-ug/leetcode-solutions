@@ -20,8 +20,8 @@ private:
             if(i > index && candidates[i] == candidates[i - 1])
                 continue;
 
-            // if(candidates[i]>target)
-            //     break;
+            if(candidates[i]>target)
+                break;
 
             path.push_back(candidates[i]);
             backtrack(candidates,target-candidates[i],i+1,path,result);
