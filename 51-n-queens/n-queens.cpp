@@ -16,6 +16,9 @@ public:
                 return false;
             }
         }
+
+        //At every recursive call, you are trying to place exactly one queen in the current row. why we dont check for fixed row and varing col in solvve function
+
         return true;
     }
     void solve(int n,vector<vector<string>>& output,vector<string>& nQueen,int row){
